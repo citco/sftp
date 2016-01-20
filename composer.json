@@ -1,0 +1,20 @@
+{
+    "name": "citco/sftp",
+    "description": "A PHP Class for handling sftp commands.",
+	"license": "MIT",
+	"authors": [
+        {
+            "name": "misagh1663",
+            "email": "misagh1663@yahoo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Citco\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+}
