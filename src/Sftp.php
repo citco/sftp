@@ -1,6 +1,9 @@
-<?php namespace Citco\Sftp;
+<?php namespace Citco;
 
-use SftpExceptions;
+use Citco\Exceptions\SftpGeneralException;
+use Citco\Exceptions\SftpNetworkException;
+use Citco\Exceptions\SftpFileNotFoundException;
+use Citco\Exceptions\SftpAuthenticationException;
 
 class Sftp {
 
@@ -9,7 +12,7 @@ class Sftp {
 	 *
 	 * @var $sftp
 	 */
-	protected $sftp;
+	public $sftp;
 
 	/**
 	 * Constructor of sftp class.
