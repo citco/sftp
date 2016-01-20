@@ -1,4 +1,4 @@
-<?php
+<?php namespace Citco\Sftp;
 
 class SftpGeneralException extends Exception {}
 
