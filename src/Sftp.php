@@ -47,7 +47,7 @@ class Sftp {
 
 		if (@ssh2_auth_password($connection, $username, $password) === false)
 		{
-			throw new SftpAuthenticationException("Invalid username or password for sftp.");			
+			throw new SftpAuthenticationException("Invalid sftp username/password.");			
 		}
 
 		return ssh2_sftp($connection);
@@ -68,7 +68,7 @@ class Sftp {
 	{
 		if (@file_put_contents("ssh2.sftp://{$this->sftp}{$path}{$file_name}", $content) === false)
 		{
-			throw new SftpGeneralException("Could not upload file to this path : {$path}");
+			throw new SftpGeneralException("Could not upload file to this path: '{$path}'");
 		}
 
 		return true;
@@ -104,7 +104,7 @@ class Sftp {
 			}
 		}
 
-		throw new SftpFileNotFoundException("Could not Find {$file_name} file from this path : {$path}");
+		throw new SftpFileNotFoundException("Could not find '{$file_name}' file from this path: '{$path}'");
 	}
 
 	/**
@@ -125,7 +125,7 @@ class Sftp {
 		$stream = @fopen($destination, 'r');
 		if (! $stream)
 		{
-			throw new SftpGeneralException("Could not open {$file_name} file from sftp.");
+			throw new SftpGeneralException("Could not open '{$file_name}' file from sftp.");
 		}
 
 		$size = filesize($destination);
